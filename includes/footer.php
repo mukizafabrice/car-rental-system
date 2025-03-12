@@ -1,5 +1,5 @@
-<footer class="text-center py-3 bg-light mt-4">
-    <p class="mb-0">&copy; <?php echo date("Y"); ?> Car Rental System. All rights reserved.</p>
+<footer class="footer bg-dark text-white text-center py-3">
+    <p>&copy; <?php echo date("Y"); ?> Car Rental System. All rights reserved.</p>
 </footer>
 
 <!-- Bootstrap JS -->
