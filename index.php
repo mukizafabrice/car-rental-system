@@ -19,12 +19,10 @@
 
     .navbar {
         background-color: rgba(0, 0, 0, 0.7);
-        /* Semi-transparent navbar */
     }
 
     .hero {
         background-image: url('./assets/images/1.jpg');
-        /* Replace with your car image */
         background-size: cover;
         background-position: center;
         color: white;
@@ -52,7 +50,6 @@
 
     .btn-primary {
         background-color: #FF5733;
-        /* Vibrant Orange-Red */
         border-color: #FF5733;
     }
 
@@ -72,25 +69,25 @@
         border-radius: 8px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
-        /* Added transition */
+
     }
 
     .feature-card:hover {
         transform: translateY(-5px);
-        /* Slightly lift on hover */
+
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-        /* Increased shadow on hover */
+
     }
 
     .features i {
         color: #28A745;
-        /* Modern Green */
+
         transition: color 0.3s ease;
     }
 
     .feature-card:hover i {
         color: #218838;
-        /* Darker green on hover */
+
     }
 
     .features h3 {
@@ -120,10 +117,10 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="signup.php">Sign Up</a>
+                    <a class="nav-link" href="./auth/register.php">Sign Up</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="signin.php">Sign In</a>
+                    <a class="nav-link" href="./auth/login.php">Sign In</a>
                 </li>
             </ul>
         </div>

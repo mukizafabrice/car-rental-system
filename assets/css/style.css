@@ -3,47 +3,129 @@
   font-family: "Poppins", sans-serif;
   box-sizing: border-box;
 }
-body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0;
-  padding: 0;
+/* Customer Landing Page (Full Car Rental Page) */
+.car-rental-customer-landing {
+  background-color: #f8f9fa;
+  padding: 2rem 0; /* Add some padding */
 }
 
-.navbar {
-  background-color: rgba(0, 0, 0, 0.7);
-  /* Semi-transparent navbar */
+.car-rental-featured-car-image {
+  /* Add specific styles for the featured car image if needed */
+  border-radius: 8px; /* Example: Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Example: Add a shadow */
 }
 
-.hero {
-  background-image: url("./images/1.jpg");
-  /* Replace with your car image */
-  background-size: cover;
-  background-position: center;
+.car-rental-featured-car-details {
+  padding: 1rem; /* Add some padding */
+}
+
+.car-rental-car-card {
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 1rem; /* Add space between car cards */
+}
+
+.car-rental-car-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.car-rental-car-card-body {
+  text-align: center;
+  padding: 1rem;
+}
+
+.car-rental-footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  background-color: #343a40; /* Dark background */
   color: white;
   text-align: center;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 1rem 0;
 }
 
-.hero-content {
-  max-width: 800px;
+/* Customer Dashboard (Logged-in User) */
+.dashboard-card {
+  border: 1px solid #dee2e6;
   padding: 2rem;
-}
-
-.hero h1 {
-  font-size: 3.5rem;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   margin-bottom: 1rem;
 }
 
-.hero p {
+.dashboard-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.dashboard-card i {
+  color: #007bff;
+  margin-bottom: 1rem;
+}
+
+/* Simple Landing Page(Image and Text) */
+.simple-landing {
+  background-image: url("car-background.jpg"); /* Replace with your image */
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+.simple-landing::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+}
+
+.landing-content {
+  position: relative;
+  z-index: 1; /* Ensure content is above the overlay */
+  padding: 2rem;
+}
+
+.landing-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.landing-content p {
   font-size: 1.2rem;
   margin-bottom: 2rem;
 }
 
+.landing-button {
+  background-color: #007bff;
+  color: white;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.landing-button:hover {
+  background-color: #0056b3;
+}
+
+/* Features Section Refinement */
 .features {
   background-color: #f8f9fa;
+  padding: 2rem 0;
 }
 
 .feature-card {
@@ -52,25 +134,21 @@ body {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  /* Added transition */
+  margin-bottom: 1rem;
 }
 
 .feature-card:hover {
   transform: translateY(-5px);
-  /* Slightly lift on hover */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-  /* Increased shadow on hover */
 }
 
 .features i {
   color: #007bff;
-  /* Primary color for icons */
   transition: color 0.3s ease;
 }
 
 .feature-card:hover i {
   color: #0056b3;
-  /* Darker shade on hover */
 }
 
 .features h3 {
@@ -81,9 +159,13 @@ body {
 .features p {
   color: #6c757d;
 }
-
-.footer {
-  position: relative;
-  bottom: 0;
-  width: 100%;
+/* customer styles */
+.customer-background {
+  background: url("../images/1.jpg") no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
 }
