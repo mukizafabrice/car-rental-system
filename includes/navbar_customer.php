@@ -9,6 +9,9 @@
         <div class="collapse navbar-collapse" id="customerNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
+                    <a class="nav-link text-white" href="index.php"><i class="bi bi-speedometer2"></i> Dashboard</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link text-white" href="view_cars.php"><i class="bi bi-car-front"></i> View Cars</a>
                 </li>
                 <li class="nav-item">

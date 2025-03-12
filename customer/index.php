@@ -29,7 +29,7 @@
         <div>
             <h1 class="mb-3">Welcome to Your Dashboard</h1>
             <p class="lead">Find and rent your perfect car with ease.</p>
-            <a href="rentals.php" class="btn btn-primary">Browse Available Cars</a>
+            <a href="view_cars.php" class="btn btn-primary">Browse Available Cars</a>
         </div>
     </div>
 
