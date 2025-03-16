@@ -1,6 +1,6 @@
 <?php include '../config/database.php'; ?>
 <?php include '../includes/header.php'; ?>
-<?php include '../includes/navbar_customer.php'; ?>
+<?php include '../includes/navbar_admin.php'; ?>
 
 <?php
 if (isset($_GET['id'])) {
@@ -50,20 +50,25 @@ if (isset($_GET['id'])) {
 <body>
     <div class="center-content">
         <div class="container">
-            <h1 class="text-center"><?php echo $car['car_name']; ?> Details</h1>
             <div class="row justify-content-center">
-                <div class="col-md-6 text-center">
-                    <img src="<?php echo $car['image']; ?>" class="img-fluid car-image" alt="<?php echo $car['car_name']; ?>">
-                </div>
-                <div class="col-md-6">
-                    <p><strong>Brand:</strong> <?php echo $car['brand']; ?></p>
-                    <p><strong>Model:</strong> <?php echo $car['model']; ?></p>
-                    <p><strong>Year:</strong> <?php echo $car['year']; ?></p>
-                    <p><strong>Price per Day:</strong> $<?php echo $car['price_per_day']; ?></p>
-                    <p><strong>Created At:</strong> <?php echo $car['created_at']; ?></p>
-                    <div class="text-center">
-                        <a href="index.php" class="btn btn-secondary">Back to Listings</a>
-                        <a href="rent_car.php?id=<?php echo $car['id']; ?>" class="btn btn-success">Rent Now</a>
+                <div class="col-md-10">
+                    <h1 class="text-center"><?php echo $car['car_name']; ?> Details</h1>
+                    <div class="row">
+                        <div class="col-md-6 text-center">
+                            <img src="<?php echo $car['image']; ?>" class="img-fluid car-image" alt="<?php echo $car['car_name']; ?>">
+                        </div>
+                        <div class="col-md-6">
+                            <p><strong>Brand:</strong> <?php echo $car['brand']; ?></p>
+                            <p><strong>Model:</strong> <?php echo $car['model']; ?></p>
+                            <p><strong>Year:</strong> <?php echo $car['year']; ?></p>
+                            <p><strong>Price per Day:</strong> $<?php echo $car['price_per_day']; ?></p>
+                            <p><strong>Created At:</strong> <?php echo $car['created_at']; ?></p>
+                            <div class="text-center">
+                                <a href="car_listings.php" class="btn btn-secondary">Back to Listings</a>
+                                <a href="edit_car.php?id=<?php echo $car['id']; ?>" class="btn btn-warning">Edit</a>
+                                <a href="delete_car.php?id=<?php echo $car['id']; ?>" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this car?')">Delete</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

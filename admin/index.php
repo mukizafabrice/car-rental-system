@@ -1,3 +1,4 @@
+<?php include '../config/database.php'; ?>
 <?php include '../includes/header.php'; ?>
 <?php include '../includes/navbar_admin.php'; ?>
 

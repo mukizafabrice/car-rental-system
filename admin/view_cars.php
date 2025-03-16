@@ -1,6 +1,6 @@
 <?php include '../config/database.php'; ?>
 <?php include '../includes/header.php'; ?>
-<?php include '../includes/navbar_customer.php'; ?>
+<?php include '../includes/navbar_admin.php'; ?>
 <?php
 // Pagination settings
 $results_per_page = 6; // Adjust as needed

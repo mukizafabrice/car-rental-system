@@ -1,3 +1,6 @@
+<?php include '../config/database.php'; ?>
+<?php include '../includes/header.php'; ?>
+<?php include '../includes/navbar_admin.php'; ?>
 <?php
 
 $message = "";
@@ -25,18 +28,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
                 try {
-                    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-                    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-                    $stmt = $conn->prepare("INSERT INTO cars (car_name, brand, model, year, price_per_day, image) VALUES (:car_name, :brand, :model, :year, :price_per_day, :image)");
-                    $stmt->bindParam(':car_name', $car_name);
-                    $stmt->bindParam(':brand', $brand);
-                    $stmt->bindParam(':model', $model);
-                    $stmt->bindParam(':year', $year);
-                    $stmt->bindParam(':price_per_day', $price_per_day);
-                    $stmt->bindParam(':image', $target_file);
+                    $stmt = $conn->prepare("INSERT INTO cars (car_name, brand, model, year, price_per_day, image) VALUES (?, ?, ?, ?, ?, ?)");
+                    $stmt->execute([$car_name, $brand, $model, $year, $price_per_day, $target_file]);
 
-                    $stmt->execute();
                     $message = "New car record created successfully";
                 } catch (PDOException $e) {
                     $message = "Error: " . $e->getMessage();
@@ -106,3 +101,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </body>
 
 </html>
+<?php include '../includes/footer.php'; ?>
