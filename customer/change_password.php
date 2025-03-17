@@ -1,13 +1,9 @@
 <?php include '../config/database.php'; ?>
+<?php include '../auth/protected_page.php'; ?>
 <?php include '../includes/header.php'; ?>
 <?php include '../includes/navbar_customer.php'; ?>
 
 <?php
-
-if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'customer') {
-    header("Location: ../auth/login.php");
-    exit;
-}
 $user_id = $_SESSION['user_id'];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

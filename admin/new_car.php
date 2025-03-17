@@ -1,12 +1,8 @@
 <?php include '../config/database.php'; ?>
+<?php include '../auth/protected_page.php'; ?>
 <?php include '../includes/header.php'; ?>
 <?php include '../includes/navbar_admin.php'; ?>
 <?php
-
-if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
-    header("Location: ../auth/login.php");
-    exit;
-}
 
 $message = "";
 $target_dir = "../assets/images/";
@@ -63,8 +59,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
     <div class="container min-vh-100 d-flex justify-content-center align-items-center">
-        <div class="w-50 bg-light p-4 rounded shadow">
-            <h1>Add New Car</h1>
+        <div class="w-50 bg-light p-4 mt-4 rounded shadow">
+            <h1 class="text-center">Add New Car</h1>
 
             <?php if ($message): ?>
                 <div class="alert <?php echo (strpos($message, 'Error') !== false) ? 'alert-danger' : 'alert-success'; ?>">
@@ -97,7 +93,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <label for="image">Image:</label>
                     <input type="file" class="form-control-file" id="image" name="image" accept="image/*" required>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary btn-block">Submit</button>
             </form>
         </div>
     </div>

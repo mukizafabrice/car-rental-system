@@ -1,13 +1,9 @@
 <?php
 include '../config/database.php';
+include '../auth/protected_page.php';
 include '../includes/header.php';
 include '../includes/navbar_customer.php';
 
-
-if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
-    header("Location: ../auth/login.php");
-    exit;
-}
 
 if (isset($_POST['update_car'])) {
     $id = $_POST['id'];
@@ -17,13 +13,13 @@ if (isset($_POST['update_car'])) {
     $year = $_POST['year'];
     $price_per_day = $_POST['price_per_day'];
 
-    // Fetch existing image path
+
     $stmt = $conn->prepare("SELECT image FROM cars WHERE id = ?");
     $stmt->execute([$id]);
     $car = $stmt->fetch(PDO::FETCH_ASSOC);
-    $imagePath = $car['image']; // Keep the existing image by default
+    $imagePath = $car['image'];
 
-    // Check if a new image is uploaded
+
     if (!empty($_FILES["image"]["tmp_name"])) {
         $check = getimagesize($_FILES["image"]["tmp_name"]);
         if ($check !== false) {
@@ -31,11 +27,11 @@ if (isset($_POST['update_car'])) {
             $target_file = $target_dir . basename($_FILES["image"]["name"]);
             $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
-            // Validate file type
+
             if (in_array($imageFileType, ["jpg", "png", "jpeg", "gif"])) {
-                if ($_FILES["image"]["size"] <= 5000000) { // 5MB limit
+                if ($_FILES["image"]["size"] <= 5000000) {
                     if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
-                        $imagePath = $target_file; // Update only if upload is successful
+                        $imagePath = $target_file;
                     } else {
                         echo "Error uploading new image.";
                         exit();
@@ -54,7 +50,7 @@ if (isset($_POST['update_car'])) {
         }
     }
 
-    // Update the database
+
     $stmt = $conn->prepare("UPDATE cars SET car_name = ?, brand = ?, model = ?, year = ?, price_per_day = ?, image = ? WHERE id = ?");
     $stmt->execute([$car_name, $brand, $model, $year, $price_per_day, $imagePath, $id]);
 
@@ -62,7 +58,7 @@ if (isset($_POST['update_car'])) {
     exit();
 }
 
-// Fetch car details for editing
+
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
     $stmt = $conn->prepare("SELECT * FROM cars WHERE id = ?");

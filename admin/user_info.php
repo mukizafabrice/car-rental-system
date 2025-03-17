@@ -1,14 +1,9 @@
 <?php include '../config/database.php'; ?>
+<?php include '../auth/protected_page.php'; ?>
 <?php include '../includes/header.php'; ?>
 <?php include '../includes/navbar_admin.php'; ?>
 
 <?php
-
-
-if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
-    header("Location: ../auth/login.php");
-    exit;
-}
 
 try {
     $stmt = $conn->prepare("SELECT * FROM users WHERE role = 'admin'");

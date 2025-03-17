@@ -1,12 +1,9 @@
 <?php include '../config/database.php'; ?>
+<?php include '../auth/protected_page.php'; ?>
 <?php include '../includes/header.php'; ?>
 <?php include '../includes/navbar_customer.php'; ?>
 
 <?php
-if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'customer') {
-    header("Location: ../auth/login.php");
-    exit;
-}
 
 if (isset($_GET['id'])) {
     $car_id = $_GET['id'];
@@ -55,6 +52,9 @@ if (isset($_GET['id'])) {
 <body>
     <div class="center-content">
         <div class="container">
+            <a href=" view_cars.php" class="link ">
+                <i class="fas fa-arrow-left"></i>
+                back</a>
             <h1 class="text-center"><?php echo $car['car_name']; ?> Details</h1>
             <div class="row justify-content-center">
                 <div class="col-md-6 text-center">

@@ -1,12 +1,8 @@
 <?php include_once '../config/database.php'; ?>
+<?php include '../auth/protected_page.php'; ?>
 <?php include_once '../includes/header.php'; ?>
 <?php include_once '../includes/navbar_customer.php'; ?>
-<?php
-if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'customer') {
-    header("Location: ../auth/login.php");
-    exit;
-}
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 

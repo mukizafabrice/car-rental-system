@@ -1,18 +1,13 @@
 <?php include '../config/database.php'; ?>
-<?php include '../includes/header.php'; ?>
-<?php include '../includes/navbar_admin.php'; ?>
-<?php
+<?php include '../auth/protected_page.php'; ?>
 
-if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
-    header("Location: ../auth/login.php");
-    exit;
-}
+<?php
 if (isset($_GET['id'])) {
     $delete_id = $_GET['id'];
     try {
         $stmt = $conn->prepare("DELETE FROM cars WHERE id = ?");
         $stmt->execute([$delete_id]);
-        header("Location: View_cars.php"); // Redirect after deletion
+        header("Location: View_cars.php");
         exit();
     } catch (PDOException $e) {
         echo "Error deleting record: " . $e->getMessage();
