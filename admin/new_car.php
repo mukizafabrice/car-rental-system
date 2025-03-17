@@ -3,6 +3,11 @@
 <?php include '../includes/navbar_admin.php'; ?>
 <?php
 
+if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
+    header("Location: ../auth/login.php");
+    exit;
+}
+
 $message = "";
 $target_dir = "../assets/images/";
 
@@ -57,42 +62,44 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
-    <div class="container">
-        <h1>Add New Car</h1>
+    <div class="container min-vh-100 d-flex justify-content-center align-items-center">
+        <div class="w-50 bg-light p-4 rounded shadow">
+            <h1>Add New Car</h1>
 
-        <?php if ($message): ?>
-            <div class="alert <?php echo (strpos($message, 'Error') !== false) ? 'alert-danger' : 'alert-success'; ?>">
-                <?php echo $message; ?>
-            </div>
-        <?php endif; ?>
+            <?php if ($message): ?>
+                <div class="alert <?php echo (strpos($message, 'Error') !== false) ? 'alert-danger' : 'alert-success'; ?>">
+                    <?php echo $message; ?>
+                </div>
+            <?php endif; ?>
 
-        <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" enctype="multipart/form-data">
-            <div class="form-group">
-                <label for="car_name">Car Name:</label>
-                <input type="text" class="form-control" id="car_name" name="car_name" required>
-            </div>
-            <div class="form-group">
-                <label for="brand">Brand:</label>
-                <input type="text" class="form-control" id="brand" name="brand" required>
-            </div>
-            <div class="form-group">
-                <label for="model">Model:</label>
-                <input type="text" class="form-control" id="model" name="model" required>
-            </div>
-            <div class="form-group">
-                <label for="year">Year:</label>
-                <input type="number" class="form-control" id="year" name="year" required>
-            </div>
-            <div class="form-group">
-                <label for="price_per_day">Price per Day:</label>
-                <input type="number" step="0.01" class="form-control" id="price_per_day" name="price_per_day" required>
-            </div>
-            <div class="form-group">
-                <label for="image">Image:</label>
-                <input type="file" class="form-control-file" id="image" name="image" accept="image/*" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+            <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="car_name">Car Name:</label>
+                    <input type="text" class="form-control" id="car_name" name="car_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="brand">Brand:</label>
+                    <input type="text" class="form-control" id="brand" name="brand" required>
+                </div>
+                <div class="form-group">
+                    <label for="model">Model:</label>
+                    <input type="text" class="form-control" id="model" name="model" required>
+                </div>
+                <div class="form-group">
+                    <label for="year">Year:</label>
+                    <input type="number" class="form-control" id="year" name="year" required>
+                </div>
+                <div class="form-group">
+                    <label for="price_per_day">Price per Day:</label>
+                    <input type="number" step="0.01" class="form-control" id="price_per_day" name="price_per_day" required>
+                </div>
+                <div class="form-group">
+                    <label for="image">Image:</label>
+                    <input type="file" class="form-control-file" id="image" name="image" accept="image/*" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

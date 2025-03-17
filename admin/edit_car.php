@@ -3,7 +3,12 @@ include '../config/database.php';
 include '../includes/header.php';
 include '../includes/navbar_customer.php';
 
-// Check if update request is submitted
+
+if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
+    header("Location: ../auth/login.php");
+    exit;
+}
+
 if (isset($_POST['update_car'])) {
     $id = $_POST['id'];
     $car_name = $_POST['car_name'];

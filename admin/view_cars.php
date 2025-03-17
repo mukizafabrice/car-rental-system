@@ -2,19 +2,24 @@
 <?php include '../includes/header.php'; ?>
 <?php include '../includes/navbar_admin.php'; ?>
 <?php
-// Pagination settings
-$results_per_page = 6; // Adjust as needed
+
+if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
+    header("Location: ../auth/login.php");
+    exit;
+}
+
+$results_per_page = 6;
 $current_page = isset($_GET['page']) ? $_GET['page'] : 1;
 $start_from = ($current_page - 1) * $results_per_page;
 
-// Fetch cars with pagination
+
 $stmt = $conn->prepare("SELECT * FROM cars LIMIT :start, :limit");
 $stmt->bindParam(':start', $start_from, PDO::PARAM_INT);
 $stmt->bindParam(':limit', $results_per_page, PDO::PARAM_INT);
 $stmt->execute();
 $cars = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-// Count total cars for pagination
+
 $stmt = $conn->prepare("SELECT COUNT(*) FROM cars");
 $stmt->execute();
 $total_rows = $stmt->fetchColumn();
