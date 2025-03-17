@@ -3,6 +3,11 @@
 <?php include '../includes/navbar_customer.php'; ?>
 
 <?php
+if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'customer') {
+    header("Location: ../auth/login.php");
+    exit;
+}
+
 if (isset($_GET['id'])) {
     $car_id = $_GET['id'];
 
