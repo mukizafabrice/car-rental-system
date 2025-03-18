@@ -71,7 +71,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `email`, `password`, `role`, `created_at`) VALUES
-(1, 'admin123', 'admin@car-rental.com', '$2y$10$NSqr392VMTB3K6GpL3H33.kmpM/qEsBH4g7Mum6YT5oM/zc9ekQNi\r\n', 'admin', '2025-03-11 10:54:34'),
+(1, 'admin', 'admin@rental.com', '$2y$10$gLHOy.DqFKl8sBzRHegH1.dx83c6qj33ivwg/GO8driyUM2nTVFvW', 'admin', '2025-03-11 10:54:34'),
 (2, 'Fabrice ', 'mukizafabrice18@gmail.com', '$2y$10$WkURSzhJ/jCKmrnPbImpe.DgGgqqjW8IPxvovm6U3DXCG7VhIY5yy', 'customer', '2025-03-11 11:49:57'),
 (3, 'john', 'john@catrental.com', '$2y$10$NSqr392VMTB3K6GpL3H33.kmpM/qEsBH4g7Mum6YT5oM/zc9ekQNi', 'admin', '2025-03-12 06:13:37'),
 (4, 'peter', 'peter@gmail.com', '$2y$10$tz3AgovvwhtwOiLh5qw6AOnqbLmLkFvNLhmavQq.IfpfuN0JKWLoG', 'customer', '2025-03-12 07:54:38'),
