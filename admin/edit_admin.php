@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         echo '<div class="alert alert-success">Admin updated successfully!</div>';
-        header("Location: admin_list.php");
+        header("Location: user_info.php");
         exit;
     } catch (PDOException $e) {
         echo '<div class="alert alert-danger">Error updating admin: ' . $e->getMessage() . '</div>';

@@ -32,7 +32,7 @@
         <div>
             <h1 class="mb-3">Welcome to Admin Dashboard</h1>
             <p class="lead">Manage rentals, users, and system settings efficiently.</p>
-            <a href="manage_rentals.php" class="btn btn-primary">Manage Rentals</a>
+            <a href="view_cars.php" class="btn btn-primary">Manage Rentals</a>
         </div>
     </div>
 

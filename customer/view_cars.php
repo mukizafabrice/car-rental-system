@@ -50,7 +50,8 @@ $total_pages = ceil($total_rows / $results_per_page);
             <?php foreach ($cars as $car): ?>
                 <div class="col-md-4 car-card">
                     <div class="card">
-                        <img src="<?php echo $car['image']; ?>" class="card-img-top car-image" alt="<?php echo $car['car_name']; ?>">
+                        <img src="<?php echo $car['image']; ?>" class="card-img-top car-image img-fluid" alt="<?php echo $car['car_name']; ?>" style="max-width: 300px; height: 200px; object-fit: cover;">
+
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $car['car_name']; ?></h5>
                             <p class="card-text">Brand: <?php echo $car['brand']; ?></p>
