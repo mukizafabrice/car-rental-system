@@ -16,7 +16,7 @@ Admin Functionalities:
 - Change password  
 - Add new cars  
 - View all cars  
-- Delete and update car details  
+- Delete and update car details  through  car details('read me' button)
 - Logout  
 
 Customer Functionalities:  
@@ -47,8 +47,7 @@ Admin & Customer Credentials
   - Password: admin123  
 
 - Customer Login:  
-  - Username: `customer`  
-  - Password: `customer123`  
+  Here customer can create his/her username, email and password to log in  
 
 Deployment Link
 [Click here to access the project](your-deployment-link)  
