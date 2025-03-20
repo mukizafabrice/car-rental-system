@@ -26,19 +26,19 @@ Customer Functionalities:
 - Logout  
 
 Technologies Used  
-- Frontend: HTML, CSS, JavaScript, **Bootstrap 5**  
+- Frontend: HTML, CSS, JavaScript, Bootstrap 5  
 - Backend: PHP (OOP)  
 - Database: MySQL  
-- Deployment: GitHub / 000webhost  
+- Deployment: GitHub / bytehost  
 
 Installation & Setup  
 1. Clone the repository:  
   
-   git clone https://github.com/your-username/car-rental-system.git
+   git clone https://github.com/mukizafabrice/car-rental-system.git
    
-2. Import the database (`car_rental.sql`) into **MySQL**.  
+2. Import the database (`car_rental.sql`) into MySQL.  
 3. Configure database connection in `config.php`.  
-4. Start the server using **XAMPP** or **any PHP server**.  
+4. Start the server using XAMPP or any PHP server.  
 5. Access the system in a browser.  
 
 Admin & Customer Credentials  
@@ -50,7 +50,7 @@ Admin & Customer Credentials
   Here customer can create his/her username, email and password to log in  
 
 Deployment Link
-[Click here to access the project](your-deployment-link)  
+http://car-rental.byethost13.com
 
 License  
 This project is for educational purposes only.  
