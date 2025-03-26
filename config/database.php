@@ -5,7 +5,7 @@ session_start();
 class Database
 {
     private $host = "localhost";
-    private $db_name = "car_rental_db";
+    private $db_name = "car_rental_db1";
     private $username = "root";
     private $password = "";
     private $conn;
